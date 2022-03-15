@@ -1,6 +1,7 @@
-﻿# GithubAction-EC2
-
 CI/CD GitHub Actions workflow to turn off an Amazon Web Services EC2 instance.
+
+What is GitHub actions?
+GitHub Actions are an automated process that allows us to build, test, release and deploy any code project on GitHub, but we can also use it to automate any step of our workflow such as merging pull requests, assigning levels, triaging issues etc. In short: GitHub Actions are a custom software development workflow automation tool
 
 **Prerequisites**
 
@@ -30,7 +31,7 @@ Create GitHub [Repository](https://github.com/rishavmehra/GithubActions-EC2) mak
 name: shutdown
 on:
   push:
-  branches: [ main ]
+  # branches: [ main ]
   workflow_dispatch:
 jobs:
   build:
@@ -45,9 +46,32 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
 ```
 
+**Create AWS Keys**
 
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ua1kvf1i41v7s8ayjoh6.png)
+- Click on _Security credentials_
+- then, click on _Create access key_
+Download Security credentials
 
+Now, Add this Security credentials in GitHub _Secrets_ 
+[Actions]. Create new repository secret now add this secret like this 
 
+```
+AWS_EC2_INSTANCE_ID = i-xxxxxxxx
+AWS_ACCESS_KEY_ID = xxxxxxxxxxxxxx
+AWS_SECRET_ACCESS_KEY= xxxxxxxxxxxx
+AWS_REGION = us-east-1
+```
 
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gudjidyo4p1x0v4966g9.png)
+For AWS_Region add your running ec2 instance regions for me [us-east-1]
+
+Now, final stage. Go to Actions tab GitHub Repo and select your workflow under your workflow _Run workflow_
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/evmvbrhgqwqs0wi1fsg7.png)
+
+---
+
+Socials [Website](https://rishavmehra.ml/) [Twitter](https://twitter.com/Rishavmehraa) [GitHub](https://github.com/rishavmehra) [LinkedIn](https://www.linkedin.com/in/rishavmehra/)
 
 
