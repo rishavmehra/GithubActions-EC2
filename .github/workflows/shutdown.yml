@@ -1,15 +1,33 @@
-name: shutdown
+# Name of Action
+name: turnOffAWSEC2
+
+# Controls when the action will run. 
 on:
-  push:
-  # branches: [ main ]
+  
+  # If you want to trigger this on push to a branch uncomment below
+  # push:
+  #  branches: [ main ]
+  
+  # This allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+
+  # This workflow contains a single job called "build"
   build:
+
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    
+    # Below this are each of the steps that are run
     steps:
+    
+      # Name of step
       - name: Stop AWS EC2
+        # Run AWS Command on the GitHub Hosted runner which stops the instance using AWS authentication stored in GitHub Secrets (see below how to add)
         run: |
-          aws ec2 stop-instances --instance-ids ${{secrets.i-03af625b9860bb277 }}
+          aws ec2 stop-instances --instance-ids ${{secrets.AWS_EC2_INSTANCE_ID }}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
