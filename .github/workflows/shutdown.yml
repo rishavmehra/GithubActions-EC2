@@ -1,7 +1,7 @@
 name: shutdown
 on:
   push:
-  branches: [ main ]
+  # branches: [ main ]
   workflow_dispatch:
 jobs:
   build:
@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Stop AWS EC2
         run: |
-          aws ec2 stop-instances --instance-ids ${{secrets.AWS_EC2_INSTANCE_ID }}
+          aws ec2 stop-instances --instance-ids ${{secrets.i-03af625b9860bb277 }}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
