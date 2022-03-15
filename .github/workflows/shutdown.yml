@@ -1,5 +1,5 @@
 # Name of Action
-name: turnOffAWSEC2
+name: shutdown
 
 # Controls when the action will run. 
 on:
