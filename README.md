@@ -1,4 +1,4 @@
-CI/CD GitHub Actions workflow to turn off an Amazon Web Services EC2 instance.
+#### CI/CD GitHub Actions workflow to turn off an Amazon Web Services EC2 instance.
 
 What is GitHub actions?
 GitHub Actions are an automated process that allows us to build, test, release and deploy any code project on GitHub, but we can also use it to automate any step of our workflow such as merging pull requests, assigning levels, triaging issues etc. In short: GitHub Actions are a custom software development workflow automation tool
